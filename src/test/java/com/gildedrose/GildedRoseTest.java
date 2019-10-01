@@ -12,11 +12,11 @@ public class GildedRoseTest {
         int n = 15;
         Item[] items = new Item[] { new Item(name, n, n+10) };
         GildedRose app = new GildedRose(items);
-        for (int i = n; i > 0; i--){
+        for (int i = 1; i <= n; i++){
             app.updateQuality();
             assertEquals(name, app.items[0].name);
-            assertEquals(i-1,app.items[0].quality);
-            assertEquals(i-1,app.items[0].sellIn);
+            assertEquals(n-i,app.items[0].quality);
+            assertEquals(n-i,app.items[0].sellIn);
         } 
     }
 
@@ -40,8 +40,8 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         for (int i = 1; i <= n; i++){
             app.updateQuality();
-            assertEquals(n-i*2,app.items[0].quality);
-            assertEquals(-i,app.items[0].sellIn);
+            assertEquals(n-(i*2),app.items[0].quality);
+            assertEquals(-1*i,app.items[0].sellIn);
         } 
     }
 
