@@ -9,40 +9,36 @@ public class GildedRoseTest {
     @Test
     public void checkUsualUpdate() {
         String name = "Dummie Core";
-        int n = 15;
-        Item[] items = new Item[] { new Item(name, n, n+10) };
+        int n = 10;
+        Item[] items = new Item[] { new Item(name, n, n) };
         GildedRose app = new GildedRose(items);
-        for (int i = 1; i <= n; i++){
-            app.updateQuality();
-            assertEquals(name, app.items[0].name);
-            assertEquals(n-i,app.items[0].quality);
-            assertEquals(n-i,app.items[0].sellIn);
-        } 
+        app.updateQuality();
+        assertEquals(name, app.items[0].name);
+        assertEquals(n-1,app.items[0].quality);
+        assertEquals(n-1,app.items[0].sellIn);
     }
 
     @Test
     public void noNegativeQuality() {
         String name = "Crappy Dummie Core";
-        int n = 15;
-        Item[] items = new Item[] { new Item(name, n, n-5) };
+        int n = 10;
+        int j = 0;
+        Item[] items = new Item[] { new Item(name, n, j) };
         GildedRose app = new GildedRose(items);
-        for (int i = 0; i < n; i++){
-            app.updateQuality();
-            assertTrue(app.items[0].quality >= 0);
-        } 
+        app.updateQuality();
+        assertTrue(app.items[0].quality == j);
     }
 
     @Test
     public void doubleQualityDegradation() {
         String name = "Old Dummie Core";
-        int n = 16;
-        Item[] items = new Item[] { new Item(name, 0, n) };
+        int i = 0;
+        int j = 10;
+        Item[] items = new Item[] { new Item(name, i, j) };
         GildedRose app = new GildedRose(items);
-        for (int i = 1; i <= n; i++){
-            app.updateQuality();
-            assertEquals(n-(i*2),app.items[0].quality);
-            assertEquals(-1*i,app.items[0].sellIn);
-        } 
+        app.updateQuality();
+        assertEquals(j-2,app.items[0].quality);
+        assertEquals(i-1,app.items[0].sellIn);
     }
 
 }
