@@ -2,9 +2,9 @@ package main.java.com.gildedrose;
 
 public class Sulfuras extends GenericItem {
 
-    Sulfuras(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
-        super.quality = quality;
+    Sulfuras(Item item) {
+        super(item.name, item.sellIn, item.quality);
+        super.quality = 80;
     }
 
     @Override

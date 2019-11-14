@@ -5,19 +5,22 @@ public class GildedRose {
     Item[] items;
 
     public GildedRose(Item[] items) {
+
+        for (int i = 0; i < items.length; i++){
+            items[i] = GenericItem.newItem(items[i]);
+        }
         this.items = items;
+
     }
 
     public void updateQuality() {
 
-        GenericItem item;
-
+        GenericItem updatedItem;
         for (int i = 0; i < items.length; i++) {
 
-            item = GenericItem.newItem(items[i]);
-            item.update();
-            items[i] = item;
-
+            updatedItem = GenericItem.newItem(items[i]);
+            updatedItem.update();
+            items[i] = updatedItem;
         }
     }
 

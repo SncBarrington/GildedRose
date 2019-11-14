@@ -18,7 +18,7 @@ public abstract class GenericItem extends Item {
     }
 
     static GenericItem newItem(Item item){
-        if(item.name.contains(SULFURAS)) return new Sulfuras(item.name,item.sellIn,80);
+        if(item.name.contains(SULFURAS)) return new Sulfuras(item);
         if(item.name.contains(BACKSTAGEPASS)) return new BackstagePass(item);
         if(item.name.contains(BRIE)) return new Brie(item);
         if(item.name.contains(CONJURED)) return new Conjured(item);
