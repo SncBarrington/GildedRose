@@ -5,10 +5,10 @@ package main.java.com.gildedrose;
 public abstract class GenericItem extends Item {
 
     private static final String BRIE = "Aged Brie";
-    private static final String BACKSTAGEPASS = "Backstage passes to a TAFKAL80ETC concert";
-    private static  final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    private static final String BACKSTAGEPASS = "Backstage passes";
+    private static  final String SULFURAS = "Sulfuras";
 
-    GenericItem(String name, int sellIn, int quality) {
+    public GenericItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
@@ -29,14 +29,22 @@ public abstract class GenericItem extends Item {
     }
 
     boolean isBrie(){
-        return name.equals(BRIE);
+        return name.contains(BRIE);
     }
 
     boolean isBackStagePass(){
-        return name.equals(BACKSTAGEPASS);
+        return name.contains(BACKSTAGEPASS);
     }
 
     boolean isSulfuras(){
-        return name.equals(SULFURAS);
+        return name.contains(SULFURAS);
     }
+
+    static GenericItem newItem(Item item){
+        if(item.name.contains(SULFURAS)) return new Sulfuras(item.name,item.sellIn,80);
+        if(item.name.contains(BACKSTAGEPASS)) return new BackstagePass(item);
+        if(item.name.contains(BRIE)) return new Brie(item);
+        else return new NormalItem(item);
+    }
+    public void update(){}
 }

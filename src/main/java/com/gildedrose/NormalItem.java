@@ -10,4 +10,6 @@ public class NormalItem extends GenericItem {
         super(item.name,item.sellIn,item.quality);
     }
 
+    @Override
+    public void update(){}
 }

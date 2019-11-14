@@ -9,4 +9,7 @@ public class Sulfuras extends GenericItem {
     public Sulfuras(Item item){
         super(item.name,item.sellIn,item.quality);
     }
+
+    @Override
+    public void update(){}
 }

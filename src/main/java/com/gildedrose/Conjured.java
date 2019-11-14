@@ -1,12 +1,12 @@
 package main.java.com.gildedrose;
 
-public class Brie extends GenericItem {
+public class Conjured extends GenericItem{
 
-    Brie(String name, int sellIn, int quality) {
+    Conjured(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
-    public Brie(Item item){
+    public Conjured(Item item){
         super(item.name,item.sellIn,item.quality);
     }
 
