@@ -1,16 +1,16 @@
 package test.java.com.gildedrose;
 
 import main.java.com.gildedrose.GildedRose;
-import org.junit.jupiter.api.Test;
-
 import main.java.com.gildedrose.Item;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GildedRoseTest {
+
+class GildedRoseTest {
 
     @Test
-    public void checkUsualUpdate() {
+    void checkUsualUpdate() {
         String name = "Dummie Core";
         int n = 10;
         Item[] items = new Item[] { new Item(name, n, n) };
@@ -22,7 +22,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void noNegativeQuality() {
+    void noNegativeQuality() {
         String name = "Crappy Dummie Core";
         int n = 10;
         int j = 0;
@@ -33,7 +33,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void doubleQualityDegradation() {
+    void doubleQualityDegradation() {
         String name = "Old Dummie Core";
         int i = 0;
         int j = 10;
@@ -45,7 +45,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void checkAgedBrieNormal(){
+    void checkAgedBrieNormal(){
         String name = "Aged Brie";
         int n = 10;
         Item[] items = new Item[] { new Item(name, n, n) };
@@ -56,7 +56,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void checkAgedBrieDouble(){
+    void checkAgedBrieDouble(){
         String name = "Aged Brie";
         int i = 0;
         int j = 10;
@@ -68,7 +68,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void checkAgedBrieMaxQuality(){
+    void checkAgedBrieMaxQuality(){
         String name = "Aged Brie";
         int i = 10;
         int j = 50;

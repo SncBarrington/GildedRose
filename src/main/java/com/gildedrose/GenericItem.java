@@ -1,16 +1,18 @@
 package main.java.com.gildedrose;
 
-public class StockItem extends Item {
+
+
+public abstract class GenericItem extends Item {
 
     private static final String BRIE = "Aged Brie";
     private static final String BACKSTAGEPASS = "Backstage passes to a TAFKAL80ETC concert";
-    private static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    private static  final String SULFURAS = "Sulfuras, Hand of Ragnaros";
 
-    public StockItem(String name, int sellIn, int quality) {
+    GenericItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
-    public StockItem(Item item){
+    public GenericItem(Item item){
         super(item.name,item.sellIn,item.quality);
     }
 
