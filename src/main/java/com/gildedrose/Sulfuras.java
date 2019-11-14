@@ -4,12 +4,13 @@ public class Sulfuras extends GenericItem {
 
     Sulfuras(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
-    }
-
-    public Sulfuras(Item item){
-        super(item.name,item.sellIn,item.quality);
+        super.quality = quality;
     }
 
     @Override
-    public void update(){}
+    public void update(){
+
+        //Sulfuras' sellIn and quality never changes
+
+    }
 }

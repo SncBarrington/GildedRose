@@ -6,10 +6,17 @@ public class NormalItem extends GenericItem {
         super(name, sellIn, quality);
     }
 
-    public NormalItem(Item item){
+    NormalItem(Item item){
         super(item.name,item.sellIn,item.quality);
     }
 
     @Override
-    public void update(){}
+    public void update(){
+
+        this.quality --;
+        if(this.sellIn <= 0) this.quality --;
+
+        normalize();
+        this.sellIn --;
+    }
 }
