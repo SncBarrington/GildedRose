@@ -18,7 +18,7 @@ package main.java.com.gildedrose <<Folder>>{
         }
 
     abstract class GenericItem{
-        -static}BRIE: String = "Aged Brie"
+        -{static}BRIE: String = "Aged Brie"
         -{static}BACKSTAGEPASS: String = "Backstage passes"
         -{static}SULFURAS: String = "Sulfuras"
         -{static}CONJURED: String = "Conjured"
