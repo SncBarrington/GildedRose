@@ -4,7 +4,7 @@ package main.java.com.gildedrose;
 
 public abstract class GenericItem extends Item {
 
-    //Add more item type constants if needed
+    //Add new item type constants here
 
     private static final String BRIE = "Aged Brie";
     private static final String BACKSTAGEPASS = "Backstage passes";
@@ -23,7 +23,7 @@ public abstract class GenericItem extends Item {
         if(item.name.contains(BRIE)) return new Brie(item);
         if(item.name.contains(CONJURED)) return new Conjured(item);
 
-        //Add more item type tests if needed
+        //Add new item type tests here
 
         else return new NormalItem(item);
     }

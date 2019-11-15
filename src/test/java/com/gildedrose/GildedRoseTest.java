@@ -148,4 +148,28 @@ class GildedRoseTest {
         assertEquals(i-1,app.getItems()[0].sellIn);
     }
 
+    @Test
+    public void checkConjuredNormal(){
+        String name = "Conjured Cake";
+        int i = 5;
+        int j = 10;
+        Item[] items = new Item[] { new Item(name, i, j) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(j-2,app.getItems()[0].quality);
+        assertEquals(i-1,app.getItems()[0].sellIn);
+    }
+
+    @Test
+    public void checkConjuredDouble(){
+        String name = "Conjured Cake";
+        int i = 0;
+        int j = 10;
+        Item[] items = new Item[] { new Item(name, i, j) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(j-4,app.getItems()[0].quality);
+        assertEquals(i-1,app.getItems()[0].sellIn);
+    }
+
 }
