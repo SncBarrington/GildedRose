@@ -1,0 +1,66 @@
+@startuml
+scale 750 width
+package main.java.com.gildedrose <<Folder>>{
+
+    class GildedRose{
+        #items: Item[]
+        +GildedRose(items: Item[])
+        +updateQuality()
+        +getItems(): Item[]
+        }
+
+    class Item{
+        +name: String
+        +sellIn: int
+        +quality: int
+        +Item(name: String, sellIn: int, quality: int)
+        +toString(): String
+        }
+
+    abstract class GenericItem{
+        -static}BRIE: String = "Aged Brie"
+        -{static}BACKSTAGEPASS: String = "Backstage passes"
+        -{static}SULFURAS: String = "Sulfuras"
+        -{static}CONJURED: String = "Conjured"
+        #GenericItem(name: String, sellIn: int, quality: int)
+        #{static}newItem(item: Item): GenericItem
+        #normalize()
+        #update()
+        }
+
+    class BackstagePass{
+        #BackstagePass(item: Item)
+        #update()
+        }
+
+    class Brie{
+        #Brie(item: Item)
+        #update()
+        }
+
+    class Conjured{
+        #Conjured(item: Item)
+        #update()
+        }
+
+   class NormalItem{
+           #NormalItem(item: Item)
+           #update()
+           }
+
+    class Sulfuras{
+               #Sulfuras(item: Item)
+               #update()
+               }
+
+    Item <.up. GenericItem
+    GenericItem <-up- Brie
+    GenericItem <-up- BackstagePass
+    GenericItem <-up- Conjured
+    GenericItem <-up- NormalItem
+    GenericItem <-up- Sulfuras
+    GildedRose "n" *-- Item
+}
+
+
+@enduml

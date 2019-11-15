@@ -33,5 +33,5 @@ public abstract class GenericItem extends Item {
         if(super.quality < 0) super.quality = 0;
     }
 
-    public void update(){}
+    void update(){}
 }

@@ -7,7 +7,7 @@ public class Conjured extends GenericItem{
     }
 
     @Override
-    public void update(){
+    void update(){
 
         this.quality = this.quality - 2;
         if(this.sellIn <= 0) this.quality = this.quality - 2;

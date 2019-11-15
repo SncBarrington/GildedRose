@@ -11,7 +11,7 @@ public class NormalItem extends GenericItem {
     }
 
     @Override
-    public void update(){
+    void update(){
 
         this.quality --;
         if(this.sellIn <= 0) this.quality --;

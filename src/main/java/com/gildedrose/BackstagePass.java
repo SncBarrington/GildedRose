@@ -8,7 +8,7 @@ public class BackstagePass extends GenericItem {
     }
 
     @Override
-    public void update(){
+    void update(){
 
         this.quality ++;
         if(this.sellIn <= 10) this.quality ++;

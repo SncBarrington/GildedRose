@@ -8,7 +8,7 @@ public class Sulfuras extends GenericItem {
     }
 
     @Override
-    public void update(){
+    void update(){
 
         //Sulfuras' sellIn and quality never changes
 
